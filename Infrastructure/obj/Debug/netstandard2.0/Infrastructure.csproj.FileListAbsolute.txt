@@ -1,0 +1,12 @@
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.deps.json
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.dll
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/bin/Debug/netstandard2.0/Infrastructure.pdb
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/bin/Debug/netstandard2.0/Core.dll
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/bin/Debug/netstandard2.0/Core.pdb
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csprojAssemblyReference.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.AssemblyInfo.cs
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.csproj.CopyComplete
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.dll
+/Users/aseemaggarwal/Projects/ShoppingCart/Infrastructure/obj/Debug/netstandard2.0/Infrastructure.pdb

@@ -1,0 +1,9 @@
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/bin/Debug/netstandard2.0/Core.deps.json
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/bin/Debug/netstandard2.0/Core.dll
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/bin/Debug/netstandard2.0/Core.pdb
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.csprojAssemblyReference.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.AssemblyInfoInputs.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.AssemblyInfo.cs
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.csproj.CoreCompileInputs.cache
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.dll
+/Users/aseemaggarwal/Projects/ShoppingCart/Core/obj/Debug/netstandard2.0/Core.pdb
