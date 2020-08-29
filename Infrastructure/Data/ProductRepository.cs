@@ -30,6 +30,16 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
+            // _context.Products.OrderBy
+            
+            //_context.Products.OrderByDescending
+
+            // Task<List<Product>> task = _context.Products
+            // .Where(x => x.Id == 42)
+            // .Include(p => p.ProductType)
+            // .Include(p => p.ProductBrand)
+            // .ToListAsync();
+                                 
             return await _context.Products
                                  .Include(p => p.ProductType)
                                  .Include(p => p.ProductBrand)
