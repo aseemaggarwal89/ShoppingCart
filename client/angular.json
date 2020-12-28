@@ -32,8 +32,7 @@
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -144,5 +143,8 @@
       }
     }
   },
-  "defaultProject": "client"
+  "defaultProject": "client",
+  "cli": {
+    "analytics": "6439ad56-dfc6-4e75-a760-c6578a7e2295"
+  }
 }

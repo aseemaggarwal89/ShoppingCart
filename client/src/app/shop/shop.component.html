@@ -45,9 +45,9 @@
 
         </header>
         <div class="form-inline mt-2">
-          <input class="form-control mr-2" style="width: 300px" placeholder="Search" type="text" />
-          <button class="btn btn-outline-primary my-2">Search</button>
-          <button class="btn btn-outline-success ml-2 my-2">Reset</button>
+          <input class="form-control mr-2" #search style="width: 300px" placeholder="Search" type="text" (keyup.enter) = "onSearch()"/>
+          <button class="btn btn-outline-primary my-2" (click)="onSearch()">Search</button>
+          <button class="btn btn-outline-success ml-2 my-2" (click)="onReset()">Reset</button>
         </div>
       </div>
 
@@ -58,9 +58,14 @@
       </div>
 
       <div *ngIf="totalCount > 0" class="d-flex justify-content-center">
-        <pagination [boundaryLinks]="true" [totalItems]="this.totalCount" [itemsPerPage]="this.shopParams.pageSize"
-          previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"
-          (pageChanged)="onPageChange($event.page)">
+        <pagination [boundaryLinks]="true" 
+        [totalItems]="this.totalCount" 
+        [itemsPerPage]="this.shopParams.pageSize"
+         previousText="&lsaquo;" 
+         nextText="&rsaquo;" 
+         firstText="&laquo;" 
+         lastText="&raquo;"
+        (pageChanged)="onPageChange($event.page)">
         </pagination>
       </div>
 
