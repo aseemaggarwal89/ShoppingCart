@@ -12,7 +12,7 @@ import { ShopService } from './shop.service';
 })
 export class ShopComponent implements OnInit {
 
-  // When search reference is always avaialble we use static true otherwise we use static false
+  // When search reference is always available we use static true otherwise we use static false
   @ViewChild('search', {static: true}) searchTerm: ElementRef;
 
   products: IProduct[];
