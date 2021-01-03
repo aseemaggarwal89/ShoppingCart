@@ -34,12 +34,22 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts() {
-    this.shopService.getProducts(this.shopParams).subscribe(response => {
-      this.products = response.data;
-      this.totalCount = response.count;
-    }, error => {
-      console.log(error);
+    this.shopService.getProducts(this.shopParams).subscribe({
+      next: (response) => {
+        this.products = response.data;
+        this.totalCount = response.count;
+      },
+      error: (error) => {
+        console.log(error);
+      }
     });
+
+    // this.shopService.getProducts(this.shopParams).subscribe(response => {
+    //   this.products = response.data;
+    //   this.totalCount = response.count;
+    // }, error => {
+    //   console.log(error);
+    // });
   }
 
   getBrands() {
@@ -89,7 +99,7 @@ export class ShopComponent implements OnInit {
   }
 
   onReset() {
-    this.searchTerm.nativeElement.value = undefined;
+    this.searchTerm.nativeElement.value = '';
     this.shopParams = new ShopParams();
     this.getProducts();
   }

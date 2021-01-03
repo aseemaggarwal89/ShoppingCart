@@ -18,10 +18,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   getProductDetails() {
-    this.shopService.getProduct(this.route.snapshot.params['id']).subscribe(response => {
+    this.shopService.getProduct(this.route.snapshot.params.id).subscribe(response => {
       this.product = response;
     }, error => {
       console.log(error);
-    })
+    });
   }
 }

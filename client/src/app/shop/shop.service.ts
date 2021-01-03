@@ -6,57 +6,71 @@ import { IType } from '../shared/models/productType';
 import { map } from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = 'https://localhost:5001/api/';
 
+  baseUrl = environment.apiURL;
   constructor(private http: HttpClient) { }
 
   getProducts(shopParams: ShopParams) {
-    let params = new HttpParams();
-
-    if (shopParams.brandId !== 0) {
-      params = params.append('brandId', shopParams.brandId.toString());
-    }
-
-    if (shopParams.typeId !== 0) {
-      params = params.append('typeId', shopParams.typeId.toString());
-    }
-
-    if (shopParams.sort) {
-      params = params.append('sort', shopParams.sort);
-    }
-
-    if (shopParams.pageNumber) {
-      params = params.append('pageIndex', shopParams.pageNumber.toString());
-    }
-
-    if (shopParams.search) {
-      params = params.append('search', shopParams.search);
-    }
-    
-    return this.http.get<IPagination>(this.baseUrl + 'products', { observe: 'response', params})
+    const params = shopParams.getHttpParams();
+    // tslint:disable-next-line: no-use-before-declare
+    return this.http.get<IPagination>(ApiProvider.url(APIType.products), { observe: 'response', params})
     .pipe(map(response => {
        return response.body;
      }));
   }
 
   getBrands() {
-    return this.http.get<IBrand[]>(this.productBaseUrl() + 'brands');
+    // tslint:disable-next-line: no-use-before-declare
+    return this.http.get<IBrand[]>(ApiProvider.url(APIType.brands));
   }
 
   getTypes() {
-    return this.http.get<IType[]>(this.productBaseUrl() + 'types');
+    // tslint:disable-next-line: no-use-before-declare
+    return this.http.get<IType[]>(ApiProvider.url(APIType.types));
   }
 
   getProduct(id: number) {
-   return this.http.get<IProduct>(this.productBaseUrl() +  id); 
+   // tslint:disable-next-line: no-use-before-declare
+   return this.http.get<IProduct>(ApiProvider.url(APIType.products, id));
   }
+}
 
-  productBaseUrl() {
-    return this.baseUrl + 'products/';
+class ApiProvider {
+  static baseUrl = environment.apiURL;
+
+  static url(type: APIType, productId?: number) {
+    let prefix = '';
+    switch (type) {
+      // tslint:disable-next-line: no-use-before-declare
+      case APIType.brands:
+      prefix = 'products/brands/';
+      break;
+      // tslint:disable-next-line: no-use-before-declare
+      case APIType.types:
+        prefix = 'products/types/';
+        break;
+      // tslint:disable-next-line: no-use-before-declare
+      case APIType.products:
+        prefix = 'products/';
+        if (productId) {
+          prefix = prefix + productId;
+        }
+
+        break;
+    }
+
+    return this.baseUrl + prefix;
   }
+}
+
+enum APIType {
+  brands,
+  types,
+  products
 }
