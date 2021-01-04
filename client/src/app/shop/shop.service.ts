@@ -19,7 +19,9 @@ export class ShopService {
   getProducts(shopParams: ShopParams) {
     const params = shopParams.getHttpParams();
     // tslint:disable-next-line: no-use-before-declare
-    return this.http.get<IPagination>(ApiProvider.url(APIType.products), { observe: 'response', params})
+    const url = ApiProvider.url(APIType.products);
+
+    return this.http.get<IPagination>(url, { observe: 'response', params})
     .pipe(map(response => {
        return response.body;
      }));
