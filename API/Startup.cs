@@ -1,3 +1,4 @@
+using System.Reflection;
 using API.Extensions;
 using API.Helpers;
 using API.Middleware;
@@ -25,7 +26,7 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MappingProfiles));
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => 
             x.UseSqlite(_config.GetConnectionString(Constants.DefaultConnection)));

@@ -37,6 +37,8 @@ namespace Core.Specification
 
         public ProductsWithTypesAndBrandsSpecification(int id) : base(x => x.Id == id)
         {
+            // we can specify a lambda expression as a parameter in the Include() method to specify a navigation property
+            // So Include method is used to add load a relationship 
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
         }

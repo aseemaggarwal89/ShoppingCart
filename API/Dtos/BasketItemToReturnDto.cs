@@ -1,9 +1,7 @@
-namespace Core.Entities
+namespace API.Dtos
 {
-    public class BasketItem
+    public class BasketItemToReturnDto
     {
-        // Used in case basket is store in Database
-        public string uniqueId { get; set; }
         public int Id { get; set; }
 
         public string ProductName { get; set; }
@@ -16,7 +14,6 @@ namespace Core.Entities
 
         public string Brand { get; set; }
 
-        public string Type { get; set; }
-        
+        public string Type { get; set; } 
     }
 }
