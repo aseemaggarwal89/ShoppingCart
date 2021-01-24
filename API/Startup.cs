@@ -1,6 +1,5 @@
 using System.Reflection;
 using API.Extensions;
-using API.Helpers;
 using API.Middleware;
 using AutoMapper;
 using Infrastructure.Data;
@@ -28,6 +27,7 @@ namespace API
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddControllers();
+
             services.AddDbContext<StoreContext>(x => 
             x.UseSqlite(_config.GetConnectionString(Constants.DefaultConnection)));
 

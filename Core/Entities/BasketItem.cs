@@ -1,8 +1,10 @@
+using System.Text.Json.Serialization;
+
 namespace Core.Entities
 {
     public class BasketItem
     {
-        // Used in case basket is store in Database
+        [JsonIgnore]
         public string uniqueId { get; set; }
         public int Id { get; set; }
 

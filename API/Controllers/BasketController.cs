@@ -32,7 +32,8 @@ namespace API.Controllers
         {
             var updateBasket = await _basketRepository.UpdateBasketAsync(basket);
             var dest = _mapper.Map<CustomerBasket, CustomerBasketToReturnDto>(updateBasket);
-            return Ok(updateBasket);
+
+            return Ok(dest);
         }
 
         [HttpDelete]
