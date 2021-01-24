@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { BreadcrumbService } from 'xng-breadcrumb';
@@ -12,6 +13,10 @@ import { ShopService } from '../shop.service';
 })
 export class ProductDetailsComponent implements OnInit {
   product: IProduct;
+  private quantitySource = new BehaviorSubject<number>(1);
+  quantity$ = this.quantitySource.asObservable();
+
+  quantityToAdd: number;
 
   constructor(private shopService: ShopService, private route: ActivatedRoute,
               private bcService: BreadcrumbService,
@@ -21,6 +26,20 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProduct();
+    this.quantityToAdd = 1;
+  }
+
+  addItemToBasket() {
+    this.basketService.addItemToBasket(this.product, this.quantityToAdd);
+  }
+  incrementQuantity() {
+    this.quantityToAdd += 1;
+  }
+
+  decrementQuantity() {
+    if (this.quantityToAdd > 1) {
+      this.quantityToAdd -= 1;
+    }
   }
 
   loadProduct() {
