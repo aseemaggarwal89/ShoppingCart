@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "G4TFFbTVQN1wqoTC05Cv36/xw00O5loVAsNn/cWuuFPOtvvEs0G5Hw6cWDCG+8e1ZWIrVmXSSmNQvFJwXmCGAA==",
+  "dgSpecHash": "ONjS84LR3Xlcw9BEZIyeoswWHYjGKnPzBvf3edVL9DvTtn7tjvslFjF5cvngNSKApg1X0uvokjFTE+uuJ3hP+Q==",
   "success": true,
   "projectFilePath": "/Users/aseemaggarwal/Projects/ShoppingCart/Core/Core.csproj",
   "expectedPackageFiles": [
     "/Users/aseemaggarwal/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
-    "/Users/aseemaggarwal/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/aseemaggarwal/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
     "/Users/aseemaggarwal/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/aseemaggarwal/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/Users/aseemaggarwal/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
