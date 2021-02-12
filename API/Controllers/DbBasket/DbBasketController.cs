@@ -8,43 +8,43 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers.DbBasket
 {
-    public class DbBasketController: BaseApiController
+    public class DbBasketController : BaseApiController
     {
         // public IBasketRepository _basketRepository { get; }
-        public IBasketRepository _repo;
-        public IMapper _mapper { get; }
+        private readonly IBasketRepository _basketRepository;
+        private readonly IMapper _mapper;
         public DbBasketController(IBasketRepository basketRepository, IMapper mapper)
         {
+            _basketRepository = basketRepository;
             _mapper = mapper;
-            _repo = basketRepository;
         }
 
         [HttpGet]
-        public async Task<ActionResult<CustomerBasketToReturnDto>> GetBasketById(string id)
+        public async Task<ActionResult<CustomerBasketDto>> GetBasketById(string id)
         {
 
             // var spec = new CustomerBasketWithBasketItemsSpecification(id);
 
-            var basket = await _repo.GetBasketAsync(id);
-            
-            if (basket == null) 
+            var basket = await _basketRepository.GetBasketAsync(id);
+
+            if (basket == null)
             {
                 return NotFound(new ApiResponse(404));
             }
-            var dest = _mapper.Map<CustomerBasket, CustomerBasketToReturnDto>(basket);
+            var dest = _mapper.Map<CustomerBasket, CustomerBasketDto>(basket);
 
             return Ok(dest);
-            
+
         }
 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasketToReturnDto>> UpdateBasket(CustomerBasket basket)
+        public async Task<ActionResult<CustomerBasketDto>> UpdateBasket(CustomerBasket basket)
         {
             // var spec = new CustomerBasketWithBasketItemsSpecification(basket.Id);
-            await _repo.UpdateBasketAsync(basket);
-            var updatedBasket = await _repo.GetBasketAsync(basket.Id);
+            await _basketRepository.UpdateBasketAsync(basket);
+            var updatedBasket = await _basketRepository.GetBasketAsync(basket.Id);
 
-            var dest = _mapper.Map<CustomerBasket, CustomerBasketToReturnDto>(updatedBasket);
+            var dest = _mapper.Map<CustomerBasket, CustomerBasketDto>(updatedBasket);
 
             return Ok(dest);
         }

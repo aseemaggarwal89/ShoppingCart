@@ -1,6 +1,6 @@
 namespace API.Dtos
 {
-    public class BasketItemToReturnDto
+    public class BasketItemDto
     {
         public int Id { get; set; }
 

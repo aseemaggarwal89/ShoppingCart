@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{0A636C90-40BB-49B6-AB24-D52800A6303E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="API/Controllers/WeatherForecastController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="API/Controllers/AccountController.cs">
     <Files>
-      <File FileName="API/Controllers/WeatherForecastController.cs" Line="18" Column="1" />
       <File FileName="API/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="API/WeatherForecast.cs" Line="1" Column="1" />
+      <File FileName="API/Controllers/BasketController.cs" />
+      <File FileName="API/Controllers/AccountController.cs" Line="56" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,17 +11,16 @@
           <Node name="ShoppingCart" expanded="True">
             <Node name="API" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="WeatherForecastController.cs" selected="True" />
+                <Node name="AccountController.cs" selected="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
+              <Node name="Helpers" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.API PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
