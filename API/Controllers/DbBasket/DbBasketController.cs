@@ -11,9 +11,9 @@ namespace API.Controllers.DbBasket
     public class DbBasketController : BaseApiController
     {
         // public IBasketRepository _basketRepository { get; }
-        private readonly IBasketRepository _basketRepository;
+        private readonly IDBBasketRepository _basketRepository;
         private readonly IMapper _mapper;
-        public DbBasketController(IBasketRepository basketRepository, IMapper mapper)
+        public DbBasketController(IDBBasketRepository basketRepository, IMapper mapper)
         {
             _basketRepository = basketRepository;
             _mapper = mapper;
@@ -38,10 +38,11 @@ namespace API.Controllers.DbBasket
         }
 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasketDto>> UpdateBasket(CustomerBasket basket)
+        public async Task<ActionResult<CustomerBasketDto>> UpdateBasket(CustomerBasketDto basket)
         {
             // var spec = new CustomerBasketWithBasketItemsSpecification(basket.Id);
-            await _basketRepository.UpdateBasketAsync(basket);
+            var customerBasket = _mapper.Map<CustomerBasketDto, CustomerBasket>(basket);
+            await _basketRepository.UpdateBasketAsync(customerBasket);
             var updatedBasket = await _basketRepository.GetBasketAsync(basket.Id);
 
             var dest = _mapper.Map<CustomerBasket, CustomerBasketDto>(updatedBasket);

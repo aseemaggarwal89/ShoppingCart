@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data.DbBasket
 {
-    public class DbBasketRepository: IBasketRepository
+    public class DbBasketRepository: IDBBasketRepository
     {
         private readonly StoreContext _context;
         public DbBasketRepository(StoreContext context)

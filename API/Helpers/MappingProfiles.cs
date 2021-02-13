@@ -11,8 +11,8 @@ namespace API.Helpers
     {
         public MappingProfiles()
         {    
-            CreateMap<CustomerBasket, CustomerBasketDto>();
-            CreateMap<BasketItem, BasketItemDto>();
+            CreateMap<CustomerBasket, CustomerBasketDto>().ReverseMap();
+            CreateMap<BasketItem, BasketItemDto>().ReverseMap();
             
             CreateMap<Product, ProductToReturnDto>()
             .ForMember(x => x.ProductBrand, o => o.MapFrom( s => s.ProductBrand.Name))

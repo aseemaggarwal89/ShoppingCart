@@ -103,6 +103,15 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
+            if (this.CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            {
+                var error = new ApiValidationErrorResponse {
+                    Errors = new [] {"Email address is in use"}
+                };
+
+                return new BadRequestObjectResult(error);
+            }
+            
             var user = new AppUser
             {
                 DisplayName = registerDto.DisplayName,
